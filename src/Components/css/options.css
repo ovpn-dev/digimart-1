@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+*{
+   padding: 0;
+   margin:0;
+   box-sizing:border-box;
+}
+.optionsContainer{
+   background: url('../assets/Options.png'), lightgray -297px -0.839px / 134.583% 100.13% no-repeat;
+   background-repeat: no repeat;
+   height:100vh;
+   
+}
+.optionsdiv{
+   opacity: 0.8999999761581421;
+background: linear-gradient(130deg, #1808A3 0%, #1808A3 55.21%);
+height:100vh;
+padding:2%;
+}
+
+.regist{
+   width:22vw;
+   height: 7vh;
+   border-radius: 32px;
+   
+   background: #fff;
+
+border: 1px ;
+cursor: pointer;
+}
+
+.reg{
+   font-size: 18px;
+   font-family: 'Lato', sans-serif;
+   font-weight: 500;
+   letter-spacing: 0.4px;
+   color: #1808A3;
+   text-decoration: none;
+}
+.login{
+   width:22vw;
+   height: 7vh;
+   border-radius: 32px;
+   background: transparent;
+   font-size: 18px;
+letter-spacing: 0.4px;
+border: 2px solid white ;
+cursor: pointer;
+}
+
+.log{
+   text-decoration:none;
+   font-family: 'Lato', sans-serif;
+   font-weight: 500;
+   color: white;
+}
+.options{
+   display: flex;
+   flex-direction: column;
+   gap:2rem;
+   justify-content: center;
+   align-items: center;
+   margin-top: 11rem;
+   flex-shrink: 0;
+}
