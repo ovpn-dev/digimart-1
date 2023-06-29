@@ -8,6 +8,17 @@ import eyes from './assets/eyes.svg'
 
 const Register = () => {
   const [password, setPassword] = useState('')
+  const [confirm, setConfirm] = useState('')
+  const [showPassword, setShowPassword] = useState(false)
+  const [showConfirm, setShowConfirm] = useState(false)
+
+  const handlePasswordToggle = ()=>{
+    setShowPassword(!showPassword)
+  }
+
+  const handleConfirmToggle =()=>{
+    setShowConfirm(!showConfirm)
+  }
   return (
     <div className='Container'>
        <div className="left">
@@ -25,12 +36,12 @@ const Register = () => {
            <input type="email" placeholder='Email' className="email" />
            <input type="number" className="number" placeholder='Phone number' />
            <span className="pass">
-           <input type="password" className="password" placeholder='Password' />
-           <img src={eyes} alt="visibility" className="eyes" />
+           <input type={showPassword? 'text' : 'password'} value={password} onChange={(e)=> setPassword(e.target.value)} className="password" placeholder='Password' />
+           <img src={eyes} alt="visibility" className="eyes" onClick={handlePasswordToggle} />
            </span>
            <span className="con">
-           <input type="password" placeholder='Confirm password' className="confirm" />
-           <img src={eyes} alt="visibility" className="eyes" />
+           <input type={showConfirm? 'text': 'password'} value={confirm} onChange={(e)=> setConfirm(e.target.value)} placeholder='Confirm password' className="confirm" />
+           <img src={eyes} alt="visibility" className="eyes" onClick={handleConfirmToggle} />
            </span>
            
            <button className="register">
@@ -44,7 +55,7 @@ const Register = () => {
             <span className="words">Signup with Google</span>
             
           </button>
-          <p className="login">Already have an account? <Link className='log' to='/login'>Login</Link></p>
+          <p className="loginW">Already have an account? <Link className='log' to='/login'>Login</Link></p>
          </form>
        </div>
     </div>

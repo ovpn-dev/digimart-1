@@ -15,13 +15,16 @@ const Options = () => {
         </div>
 
         <div className="options">
+        <Link to='/register' className='reg'>
           <button className="regist">
-            <Link to='/register' className='reg'>CREATE AN ACCOUNT </Link>
+            CREATE AN ACCOUNT
           </button>
-
+          </Link>
+          <Link to='/login' className='logg'>
           <button className="login">
-            <Link to='/login' className='log'>LOGIN</Link>
+            LOGIN
           </button>
+          </Link>
         </div>
       </div>
     
