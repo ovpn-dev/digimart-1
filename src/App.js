@@ -5,7 +5,8 @@ import {Routes, Route} from 'react-router-dom'
 import Login from './Components/Login'
 import Forgot from './Components/Forgot'
 import Reset from './Components/Reset'
-
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   return (
     <div className="App">
@@ -17,6 +18,7 @@ function App() {
         <Route path='/forgot' element={<Forgot/>} />
         <Route path='/reset' element={<Reset/>} />
       </Routes>
+      <ToastContainer />
     </div>
   );
 }

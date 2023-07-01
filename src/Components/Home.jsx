@@ -2,7 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 const Home = () => {
   return (
-    <div classname='Container'>
+    <div className='Container'>
     Hello
     <ul>
       <li><Link to='/options'>Options page</Link></li>
