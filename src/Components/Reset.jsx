@@ -3,7 +3,7 @@ import logo from './assets/logo.png';
 import './css/reset.css';
 import { Link } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
-import { getAuth, verifyPasswordResetCode } from 'firebase/auth';
+import { getAuth, verifyPasswordResetCode, confirmPasswordReset } from 'firebase/auth';
 import {toast} from 'react-toastify'
 import { app } from './firebase/Firebase';
 
@@ -44,10 +44,22 @@ const Reset = () => {
     verifyActionCode();
   }, [auth, actionCode]);
 
-  const handleClick = async (e) => {
-    e.preventDefault();
-    console.log(password);
-    console.log(confirm);
+  const resetPassword = async (e) => {
+    e.preventDefault()
+    const auth = getAuth(app);
+    if(confirm !== password){
+      toast.error('Passwords do not match')
+    }else{
+    try {
+      await confirmPasswordReset(auth, actionCode, password);
+      console.log('Password reset successful.');
+      toast.success('Password reset successful')
+    } catch (error) {
+      console.error('Error resetting password:', error);
+      toast.error(error.message)
+     
+    }
+  }
   };
 
   if (isLoading) {
@@ -77,7 +89,7 @@ const Reset = () => {
 
           <input type="password" onChange={(e) => setPassword(e.target.value)} className="resetPass" placeholder='New password' />
           <input type="password" onChange={(e) => setConfirm(e.target.value)} placeholder='Re-type new password' className="retype" />
-          <button className="submit-btn" onClick={handleClick}>SUBMIT</button>
+          <button className="submit-btn" onClick={resetPassword}>SUBMIT</button>
           <p className="loginD">Didn't get a mail? <Link className='log' to='/register'>Resend it</Link></p>
         </div>
       </div>

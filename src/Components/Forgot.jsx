@@ -5,8 +5,6 @@ import './css/forgot.css'
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { app } from './firebase/Firebase';
 import {toast} from 'react-toastify'
-import { collection, doc, setDoc } from "firebase/firestore"
-import { getFirestore } from 'firebase/firestore';
 
 
 const Forgot = () => {
@@ -24,7 +22,7 @@ const Forgot = () => {
   try {
     const sent = await sendPasswordResetEmail(auth, email, actionCodeSettings);
     toast.success("Email verification sent");
-    console.log(sent, savedCode)
+    console.log(sent)
   } catch (error) {
     error.message === "Firebase: Error (auth/user-not-found)."? toast.error("User not found") : toast.error(error.message);
     console.log(error.message);
