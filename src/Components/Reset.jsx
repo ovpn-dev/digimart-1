@@ -15,7 +15,8 @@ const Reset = () => {
 
   const location = useLocation();
   const searchParams = new URLSearchParams(location.search);
-  const actionCode = searchParams.get('code');
+  const actionCode = searchParams.get('oobCode');
+  console.log(actionCode)
   const auth = getAuth(app);
 
   useEffect(() => {
