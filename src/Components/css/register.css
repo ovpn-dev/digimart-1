@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+*{
+   padding: 0;
+   margin:0;
+   box-sizing:border-box;
+}
+
+.Container{
+   display:flex;
+   height:100vh;
+   
+}
+.left{
+   background: url('../assets/prototype.png');
+   background-size: cover;
+   background-repeat: no repeat;
+   height:100vh;
+   width:50%;
+   overflow-y: hidden !important;
+   
+}
+
+.right{
+   padding: 2rem;
+   width:50%;
+   overflow-y: hidden !important;
+}
+.child{
+opacity: 0.9599999785423279;
+background:#1808A3;
+padding:3rem;
+
+
+
+}
+
+.hands{
+  align-items: center;
+}
+
+.register{
+   font-size: 18px;
+   font-family: 'Lato', sans-serif;
+   font-weight: 500;
+   letter-spacing: 0.4px;
+   color: #fff;
+   text-decoration: none;
+   width:22vw;
+   height: 7vh; 
+   border-radius: 32px;
+   background: #1808A3;
+border: 1px ;
+cursor: pointer;
+margin-top: 1rem;
+}
+.google{
+   display:flex;
+   text-align:center;
+   color: #2A2B2C;
+text-align: center;
+width:22vw;
+height: 7vh;
+font-size: 18px;
+font-family: 'Lato', sans-serif;
+font-style: normal;
+font-weight: 400;
+line-height: 32px;
+/* text-decoration-line: underline; */
+width:22vw;
+height: 7vh;
+border-radius: 32px;
+background-color: transparent;
+padding: 3px;
+cursor: pointer;
+}
+.words{
+   margin-top: .2rem;
+}
+.goog{
+   margin-left:2.5rem;
+}
+
+.or{
+   display:flex;
+   gap: .8rem;
+}
+.left-line, .right-line{
+   display:block;
+   width: 5vw;
+   height: 0vh;
+   margin-top: .8rem;
+}
+.log{
+   color:#31CD31;
+   text-decoration: none;
+   font-family: 'Lato', sans-serif;
+}
+.registrationForm{
+   margin-top: 1rem;
+   display: flex;
+   flex-direction: column;
+   gap: 1rem;
+   justify-content: center;
+   align-items: center;
+
+}
+.registrationForm input{
+   width:22vw;
+   height:6vh;
+   border-top: none;
+   border-right: none;
+   border-left: none;
+   border-bottom: 1px solid #C9C9C9;
+   font-family: 'Lato', sans-serif;
+   font-size: 16px;
+}
+.pass, .con{
+   position: relative;
+}
+.eyes{
+   position:absolute;
+   left: 17rem;
+   top: 0.6rem;
+   cursor: pointer;
+}
+.registrationForm input:focus{
+   outline: none;
+   outline-color: transparent;
+}

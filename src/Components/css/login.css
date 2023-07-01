@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+*{
+   padding: 0;
+   margin:0;
+   box-sizing:border-box;
+}
+
+.loginContainer{
+   display:flex;
+   height:100vh; 
+   font-family: 'Lato', sans-serif;
+}
+.child{
+   height:100vh;
+   margin:0;
+}
+.leftSide{
+   background: url('../assets/prototype.png');
+   background-size: cover;
+   background-repeat: no repeat;
+   height:100vh;
+   width:50%;
+   overflow-y: hidden !important;
+   margin-left: -.3rem;
+}
+
+.rightSide{
+   padding:3%;
+   width:50%;
+}
+.loginForm{
+   display:flex;
+   flex-direction: column;
+   gap:2rem;
+   margin-top: 3rem;
+   justify-content: center;
+   align-items:center;
+}
+.loginForm input{
+   width:22vw;
+   height:6vh;
+   border-top: none;
+   border-right: none;
+   border-left: none;
+   border-bottom: 1px solid #C9C9C9;
+   font-family: 'Lato', sans-serif;
+   font-size: 16px;
+}
+
+.loginBtn{
+   font-size: 18px;
+   font-family: 'Lato', sans-serif;
+   font-weight: 500;
+   letter-spacing: 0.4px;
+   color: #fff;
+   text-decoration: none;
+   width:25vw;
+   height: 7vh; 
+   border-radius: 32px;
+   background: #1808A3;
+border: 1px ;
+cursor: pointer;
+margin-top: 1rem;
+}
+.googleBtn{
+   display:flex;
+   text-align:center;
+   color: #2A2B2C;
+text-align: center;
+width:25vw;
+height: 7vh;
+font-size: 18px;
+font-family: 'Lato', sans-serif;
+font-style: normal;
+font-weight: 400;
+line-height: 32px;
+height: 7vh;
+border-radius: 32px;
+background-color: transparent;
+padding: 3px;
+cursor: pointer;
+}
+.goog{
+   margin-left:4.1rem;
+}
+.actions{
+   display:flex;
+   flex-direction: column;
+   justify-content: center;
+   gap: 2rem;
+   align-items: center;
+}
+.forgot{
+   color:#31CD31;
+   text-decoration: none;
+}
+.forgotP{
+   margin-top:-1rem;
+   align-self: flex-end;
+   margin-right: 9.3rem;
+}
+.loginForm input:focus{
+   outline: none;
+   outline-color: transparent;
+}
+.loginD{
+   margin-top: -1rem;
+   font-family: 'Lato', sans-serif;
+}
+.cont{
+   background: white;
+}
