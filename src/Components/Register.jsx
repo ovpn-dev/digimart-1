@@ -72,7 +72,7 @@ const navigate= useNavigate()
       const Credentials = GoogleAuthProvider.credentialFromResult(result)
       const token = Credentials.accessToken
       const user =result.user
-      console.log(user)
+      console.log(user, token)
       toast('registration successful')
     } catch (error) {
       // Handle Errors here.
@@ -82,7 +82,7 @@ const navigate= useNavigate()
     const email = error.customData.email;
     // The AuthCredential type that was used.
     const credential = GoogleAuthProvider.credentialFromError(error);
-    console.log(`${errorCode}, ${errorMessage}`)
+    console.log(`${errorCode}, ${errorMessage}`, email, credential)
     }
   }
   return (
