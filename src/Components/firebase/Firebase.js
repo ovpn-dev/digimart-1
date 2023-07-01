@@ -10,6 +10,8 @@ const firebaseConfig = {
   apiKey: "AIzaSyD0TDyoyBCEyI9bMqaHoZrGoZgChKf9g4I",
   authDomain: "digimart-e7852.firebaseapp.com",
   projectId: "digimart-e7852",
+
+  
   storageBucket: "digimart-e7852.appspot.com",
   messagingSenderId: "150270330772",
   appId: "1:150270330772:web:9780436f6a105035e17181",
