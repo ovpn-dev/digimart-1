@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,300&display=swap');
+*{
+   padding: 0;
+   margin:0;
+   box-sizing:border-box;
+}
+
+.main{
+   padding:2rem;
+   display:flex;
+   gap:18rem;
+   font-family: 'Lato', sans-serif;
+}
+.eDescriptionDiv{
+   margin-top:-1rem;
+}
+.box{
+   text-align:center;
+   margin-top: -1rem;
+}
+.mainReset{
+   align-items: center;
+   align-self: center;
+   display:flex;
+   flex-direction: column;
+   gap: 2rem;
+   margin-top: 8rem;
+   justify-content: center;
+}
+
+.resetPass{
+   width:25vw;
+   height: 6vh;
+   border-radius: 32px;
+   padding:1rem;
+   border: 1.5px solid #C9C9C9;
+
+}
+.retype{
+   width:25vw;
+   height: 6vh;
+   border-radius: 32px;
+   padding:1rem;
+   border: 1.5px solid #C9C9C9;
+}
+.submit-btn{
+width: 25vw;
+height:6vh;
+border-radius: 14px;
+padding:.7rem;
+background: #1808A3;
+color:white;
+border:none;
+text-align: center;
+cursor:pointer;
+}
