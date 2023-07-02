@@ -1,16 +1,35 @@
 import React, {useState} from 'react'
 import logo from './assets/logo.png'
 import './css/forgot.css'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
+import { app } from './firebase/Firebase';
+import {toast} from 'react-toastify'
+
 
 const Forgot = () => {
   const [email, setEmail] =useState('')
-  const navigate = useNavigate()
+  // const navigate = useNavigate()
 
-  const handleClick = async (e)=>{
-    e.preventDefault()
-    navigate('/reset')
+  
+  const handleClick = async (e) => {
+  e.preventDefault();
+  const auth = getAuth(app);
+  const actionCodeSettings = {
+    url: `https://digimart-exchange.vercel.app/reset`,
+    handleCodeInApp: true,
+  };
+  try {
+    const sent = await sendPasswordResetEmail(auth, email, actionCodeSettings);
+    toast.success("Email verification sent");
+    console.log(sent)
+  } catch (error) {
+    error.message === "Firebase: Error (auth/user-not-found)."? toast.error("User not found") : toast.error(error.message);
+    console.log(error.message);
   }
+};
+
+  
   return (
     <div className='fgCont'>
       <div className="main">
@@ -25,7 +44,7 @@ const Forgot = () => {
           <span ><p className='back'>back into your account</p></span>
           </div>
          
-          <input type="email" onChange={(e)=> setEmail(e.target.value)} className="forgotMail" placeholder='Email address' />
+          <input type="email" value={email} onChange={(e)=> setEmail(e.target.value)} className="forgotMail" placeholder='Email address' />
           <button className="submit-btn" onClick={handleClick}>SUBMIT</button>
         </div>
       </div>
