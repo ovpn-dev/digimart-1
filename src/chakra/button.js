@@ -1,6 +1,6 @@
 import { ComponentStyleConfig } from "@chakra-ui/theme";
 
-export const Button: ComponentStyleConfig = {
+export const Button = {
   baseStyle: {
     borderRadius: "60px",
     fontSize: "10pt",
@@ -21,9 +21,9 @@ export const Button: ComponentStyleConfig = {
   variants: {
     solid: {
       color: "white",
-      bg: "white.300",
+      bg: "#1808A3",
       _hover: {
-        bg: "blue.400",
+        bg: "#31CD31",
       },
     },
     outline: {

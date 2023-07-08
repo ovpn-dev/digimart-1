@@ -65,7 +65,11 @@ export default function WithSubnavigation() {
           <Image
             alignItems={"center"}
             justifyContent={"space-between"}
-            src="./images/digimartExch.png"
+            src={
+              colorMode === "light"
+                ? "./images/digimartExch.png"
+                : "./images/logoWhite.png"
+            }
             width="150px"
           />
         </Flex>
@@ -94,11 +98,13 @@ export default function WithSubnavigation() {
             fontSize={"sm"}
             fontWeight={600}
             variant="outline"
-            colorScheme="#1808A3"
             color={"#1808A3"}
             bg={"white"}
             onClick={() => navigate("/login")}
             cursor="pointer"
+            _hover={{
+              bg: "#E8E6F6",
+            }}
           >
             Login
           </Button>
@@ -107,10 +113,11 @@ export default function WithSubnavigation() {
             display={{ base: "none", md: "inline-flex" }}
             fontSize={"sm"}
             fontWeight={600}
+            // variants="solid"
             color={"white"}
             bg={"#1808A3"}
             _hover={{
-              bg: "blue.400",
+              bg: "#31CD31",
             }}
             onClick={() => navigate("/register")}
             cursor="pointer"
@@ -176,7 +183,7 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({ label, href, subLabel }) => {
   return (
     <Link
       href={href}
@@ -227,7 +234,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, children, href }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -280,14 +287,14 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   );
 };
 
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
+// interface NavItem {
+//   label: string;
+//   subLabel?: string;
+//   children?: Array<NavItem>;
+//   href?: string;
+// }
 
-const NAV_ITEMS: Array<NavItem> = [
+const NAV_ITEMS = [
   {
     label: "Products",
     children: [

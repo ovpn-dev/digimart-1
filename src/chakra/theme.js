@@ -8,25 +8,25 @@ import { Button } from "./button";
 
 // 2. Call `extendTheme` and pass your custom values
 export const theme = extendTheme({
-    colors: {
-        brand: {
-            100: "#1808A3",
-            // ...
-            900: "#31CD31",
-        },
+  colors: {
+    brand: {
+      100: "#1808A3",
+      // ...
+      900: "#31CD31",
     },
-    fonts: {
-        heading: "Roboto Mono, sans-serif",
-        body: "Rubik, sans-serif"
-    },
-    styles: {
-        global: () => ({
-            body: {
-                bg: "#FFFFFF",
-            },
-        }),
-    },
-    components: {
-        Button,
-    },
-})
+  },
+  fonts: {
+    heading: "Helix, sans-serif",
+    body: "Helix, sans-serif",
+  },
+  styles: {
+    global: () => ({
+      body: {
+        bg: "#FFFFFF",
+      },
+    }),
+  },
+  components: {
+    Button,
+  },
+});
