@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   IconButton,
   Box,
@@ -11,6 +12,7 @@ import {
   Drawer,
   DrawerContent,
   Text,
+  Container,
   useDisclosure,
   useColorMode,
 } from "@chakra-ui/react";
@@ -19,14 +21,14 @@ import { BiSolidDashboard, BiSolidNotepad } from "react-icons/bi";
 import { FaBitcoin, FaPaypal, FaGift } from "react-icons/fa";
 
 const LinkItems = [
-  { name: "Overview", icon: BiSolidDashboard },
-  { name: "Crypto", icon: FaBitcoin },
-  { name: "Giftcards", icon: FaGift },
-  { name: "Paypal", icon: FaPaypal },
-  { name: "Transaction", icon: BiSolidNotepad },
-  { name: "Profile", icon: FiUser },
-  { name: "Setting", icon: FiSettings },
-  { name: "Logout", icon: FiLogOut },
+  { name: "Overview", icon: BiSolidDashboard, link: "/overview" },
+  { name: "Crypto", icon: FaBitcoin, link: "/crypto" },
+  { name: "Giftcards", icon: FaGift, link: "/giftcards" },
+  { name: "Paypal", icon: FaPaypal, link: "/paypal" },
+  { name: "Transaction", icon: BiSolidNotepad, link: "/transactions" },
+  { name: "Profile", icon: FiUser, link: "/profile" },
+  { name: "Setting", icon: FiSettings, link: "/settings" },
+  { name: "Logout", icon: FiLogOut, link: "/logout" },
 ];
 
 export default function SideNav({ children }) {
@@ -62,7 +64,7 @@ export default function SideNav({ children }) {
 
 const SidebarContent = ({ onClose, ...rest }) => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const [navSize, changeNavSize] = useState("large");
+  const navigate = useNavigate();
   return (
     <Box
       bg={useColorModeValue("white", "gray.900")}
@@ -70,7 +72,7 @@ const SidebarContent = ({ onClose, ...rest }) => {
       borderRightColor={useColorModeValue("gray.200", "gray.700")}
       w={{ base: "full", md: 60 }}
       pos="fixed"
-      h="full"
+      h="100%"
       {...rest}
     >
       <Flex
@@ -93,7 +95,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        <NavItem
+          key={link.name}
+          icon={link.icon}
+          onClick={() => navigate(link.link)}
+        >
           {link.name}
         </NavItem>
       ))}
@@ -102,9 +108,11 @@ const SidebarContent = ({ onClose, ...rest }) => {
 };
 
 const NavItem = ({ icon, children, ...rest }) => {
+  const navigate = useNavigate();
+
   return (
     <Link
-      href="#"
+      // onClick={() => navigate(rest.href)}
       style={{ textDecoration: "none" }}
       _focus={{ boxShadow: "none" }}
     >
@@ -149,11 +157,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
       bg={useColorModeValue("white", "gray.900")}
       borderBottomWidth="1px"
       borderBottomColor={useColorModeValue("gray.200", "gray.700")}
-      justifyContent="flex-start"
+      justifyContent="space-between"
       {...rest}
     >
       <Image
-        alignItems={"center"}
         justifyContent={"space-between"}
         src={
           colorMode === "light"

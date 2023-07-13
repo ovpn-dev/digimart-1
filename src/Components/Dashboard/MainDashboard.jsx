@@ -1,21 +1,17 @@
 import React from "react";
-import "./css/dashboard.css";
-import SideNav from "./SideNav";
+// import "./css/dashboard.css";
 import Dash from "./Dash";
-import Sidebar from "./Sidebar/Sidebar";
-import { Flex, Stack } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { SideBarFunc } from "./SideBarFunc";
 
 const MainDashboard = () => {
   return (
     <>
-      <Stack>
-        <SideNav /> <Dash />
-      </Stack>
+      <Flex flexDir={["column", "column", "row"]}>
+        <SideBarFunc />
+        <Dash />
+      </Flex>
     </>
-    // <div className="dash-cont">
-    //   {/* <Sidebar /> */}
-
-    // </div>
   );
 };
 
