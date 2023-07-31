@@ -10,14 +10,18 @@ import "react-toastify/dist/ReactToastify.css";
 import MainDashboard from "./Components/Dashboard/MainDashboard";
 import Transactions from "./Components/Dashboard/Transactions";
 import CryptoDash from "./Components/Dashboard/Crypto/CryptoDash";
+import Setting from "./Components/Dashboard/Setting";
+import { useEffect } from "react";
+import SellCrypto from "./Components/Dashboard/Crypto/SellCrypto";
+import SellConverter from "./Components/Dashboard/Crypto/SellConverter";
+import SellCheckout from "./Components/Dashboard/Crypto/SellCheckout";
+import SellProof from "./Components/Dashboard/Crypto/SellProof";
+import SellFinalCheckout from "./Components/Dashboard/Crypto/SellFinalCheckout";
 
 function App() {
-  window.addEventListener("load", showText);
-
-  function showText() {
-    var Tawk_API = Tawk_API || {},
-      Tawk_LoadStart = new Date();
-    (function () {
+  useEffect(() => {
+    const showText = () => {
+      var Tawk_API = Tawk_API || {};
       var s1 = document.createElement("script"),
         s0 = document.getElementsByTagName("script")[0];
       s1.async = true;
@@ -25,8 +29,10 @@ function App() {
       s1.charset = "UTF-8";
       s1.setAttribute("crossorigin", "*");
       s0.parentNode.insertBefore(s1, s0);
-    })();
-  }
+    };
+
+    showText();
+  }, []);
   return (
     <div className="App">
       <Routes>
@@ -39,6 +45,12 @@ function App() {
         <Route path="/dashboard" element={<MainDashboard />} />
         <Route path="/transactions" element={<Transactions />} />
         <Route path="/crypto" element={<CryptoDash />} />
+        <Route path="/settings" element={<Setting />} />
+        <Route path="/sellcrypto" element={<SellCrypto />} />
+        <Route path="/sellconverter" element={<SellConverter />} />
+        <Route path="/sellcheckout" element={<SellCheckout />} />
+        <Route path="/sellproof" element={<SellProof />} />
+        <Route path="/sellfinalcheckout" element={<SellFinalCheckout />} />
       </Routes>
       <ToastContainer />
     </div>
